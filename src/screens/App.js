@@ -8,30 +8,31 @@ import List from '../funcComponents/List'
 function App() {
   const [state, setState] = useState(
     {
-      tdtask: 'none', //variabile temporanea in cui inserisco ciò che c'è nell'input
-      todo: [] //al click del bottone aggiungo al vettore todo la variabile tdtask
+      todo: [], //al click del bottone aggiungo al vettore todo la variabile tdtask
+      message: ''
     }
   )
   useEffect(
     () => {
       console.log('componente pronto -> didMount')
       console.log('todocambiato', state.todo[state.todo.length - 1])
-    },[state.tdtask, state.todo]
+    },[]
   )
   function getTask(task) {
     setState({
       ...state,
-      tdtask: task
+      message: task
     })
   }
   function invia() {
     console.log('invia')
     console.log(state.tdtask)
     const templist = state.todo
-    templist.push(state.tdtask)
+    templist.push(state.message)
     setState({
       ...state,
-      todo: templist
+      todo: templist,
+      message: ''
     })
     console.log(state.todo)
   }
@@ -43,6 +44,7 @@ function App() {
         inputPlaceholder={'inserisci un task'}
         inputMaxLength={60}
         callbackInput={getTask}
+        value={state.message}
       />
       <Button
         name={'invia'}

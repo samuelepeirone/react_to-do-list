@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import '../assets/css/InputBox.css';
 
 function InputBox(props){
     function onChangeInput(event){
@@ -11,6 +12,7 @@ function InputBox(props){
             type={props.inputType}
             placeholder={props.inputPlaceholder}
             maxLength={props.inputMaxLength}
+            value={props.value}
         />
     )
 }

@@ -1,0 +1,28 @@
+input{
+    border: none;
+    height: 2rem;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin: none;
+    width: 300px;
+    background-color: #f6f1f1ed;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    transition: 150ms;
+}
+input:hover{
+    background-color: #f6f1f1b9;
+    width: 400px;
+}
+input:focus{
+    width: 400px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 17px;
+    padding-right: 17px;
+    background-color: #f6f1f1b9;
+    outline: none;
+    border: 1px solid #4e6e81b4;
+}
